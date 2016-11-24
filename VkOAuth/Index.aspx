@@ -6,8 +6,8 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
-    <form id="form1" runat="server">
+    <body>
+        <form id="form1" runat="server">
         <!-- Возможно: стоит проверять Sessin["UserId"] -->
         <% if (Session["UserId"] == null)
            { %>

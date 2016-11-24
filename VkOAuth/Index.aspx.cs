@@ -7,11 +7,11 @@ using System.Web.UI;
 using Newtonsoft.Json;
 
 namespace VkOAuth
-
 {
-
     public partial class Index1 : Page
     {
+ 
+
         //Получать остальные параметры и формировать ссылки: используя их (client id, client secret и redirect uri)
         private readonly string ClientId = ConfigurationManager.AppSettings["ClientId"];
         private readonly string ClientSecret = ConfigurationManager.AppSettings["ClientSecret"];
@@ -27,11 +27,9 @@ namespace VkOAuth
         {
              Response.Redirect("https://api.vkontakte.ru/oauth/authorize?client_id="+ 
                  ClientId + "&redirect_uri=" + 
-                 ResponseUri+"&scope=offline&messages&response_type=code&display=page");
+                 ResponseUri+"&scope=offline,secure&response_type=code&display=page");
 
         }
-
-      
 
         private void GetAuthData()
         {
@@ -97,11 +95,6 @@ namespace VkOAuth
 
                 Session["LastName"] = j.last_name;   
             }
-
-
-
-           
-
 
         }
     }
